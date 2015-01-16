@@ -1,0 +1,6 @@
+#!/bin/bash
+set -x
+source /home/{{ USER }}/.bashrc
+zendev use {{ APP_ID }}
+zendev build {{ DEVIMGOPTS }} devimg
+make

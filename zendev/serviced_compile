@@ -1,0 +1,7 @@
+#!/bin/bash
+set -x
+source /home/{{ USER }}/.bashrc
+source $(zendev bootstrap)
+zendev use {{ APP_ID }}
+zendev cd serviced
+make

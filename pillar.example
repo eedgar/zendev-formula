@@ -1,0 +1,22 @@
+zendev:
+   app_id: europa
+   app_tag: europa-release
+
+   buildServiced: True
+   buildDevImg: False
+   #DevImgOpts: '--resmgr'
+
+   docker_opts: -dns=8.8.8.8
+
+   # User info
+   username: dummyuserid
+   gitconfig: |
+     [user]
+       name = Some User
+       email = suser@zenoss.com
+   dockerhub:
+      username: suser
+      email: suser@zenoss.com
+      password: dummypassword
+
+
