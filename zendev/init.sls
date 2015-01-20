@@ -117,6 +117,14 @@ docker-service:
     - watch:
       - file: docker-defaults 
 
+dockerhub-login:
+  cmd.run:
+    - name: docker login -u {{ pillar['zendev']['dockerhub']['username']}} -e {{ pillar['zendev']['dockerhub']['email'] }} -p {{ pillar['zendev']['dockerhub']['password'] }}
+    - user: {{ USER }}
+    - unless: test -f ~/.dockercfg
+    - require:
+      - user: docker-user
+
 # go #########################################################################
 
 go-dependencies:
